@@ -21,6 +21,7 @@ export class TareasService {
 
     createTarea(body:any){
         const newtarea = new Tarea();
+        newtarea.name = body.name;
         return this.tareaRepo.save(newtarea);
     }
 

@@ -11,7 +11,7 @@ export class TareasController {
     //traer todo
     @Get()
     getAll() {
-        return this.tareasService.findAllTareas;
+        return this.tareasService.findAllTareas();
     }
 
     //traer uno
