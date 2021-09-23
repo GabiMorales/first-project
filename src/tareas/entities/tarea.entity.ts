@@ -1,4 +1,4 @@
-import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
+import { Column, CreateDateColumn, Entity, PrimaryGeneratedColumn, UpdateDateColumn } from "typeorm";
 
 @Entity()
 export class Tarea {
@@ -11,5 +11,15 @@ export class Tarea {
 
     @Column({default: false})
     completed: boolean;
+
+    @CreateDateColumn({
+        name: 'creation_at',
+        type: 'timestamptz',
+        default: () => 'CURRENT_TIMESTAMP',
+      })
+      creationAt: Date;
+      
+      @UpdateDateColumn({ name: 'updated_at', type: 'timestamptz', default: () => 'CURRENT_TIMESTAMP' })
+      updatedAt: Date;
 
 }
